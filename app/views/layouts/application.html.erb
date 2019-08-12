@@ -13,8 +13,25 @@
     <header class="header">
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">Blog</a></h1>
-        
-      </div>
+        <% if user_signed_in? %>
+        <div class="user_nav grid-6">
+          <span><%= current_user.nickname %>
+          <ul class="user__info">
+            <li>
+              <a href="#<%マイページ%>">マイページ</a>
+              <%= #link_to "ログアウト" url ,method: :delete%>
+            </li>
+          </ul>
+         </span>
+         <a class="post" href="#">投稿する</a>
+       </div>
+      <% else %>
+       <div class="grif-6">
+        <%= #link_to "ログイン", url, class: 'post'%>
+        <%= #link_to "新規投稿", url, class: 'post'%>
+       </div>
+     <% end %>
+    </div>
     </header>
     
     <%= yield %>

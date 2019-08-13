@@ -17,3 +17,29 @@
   font-size:25px;
   font-weight: 600;
 }
+
+.main-contents{
+  width: 70%;
+  margin: 100px 200px;
+}
+.article{
+  width:800px;
+  background-color:#fff;
+  margin: 10px 10px;
+  padding: 10px;
+  border: medium solid #f5f5f5;
+  border-radius: 5px;
+  box-shadow:2px 2px #dcdcdc;
+}
+.article-text ul{
+  display: flex
+}
+.article-text a{
+  color:#f2f4f8;
+}
+.article-text li{
+  list-style:none;
+  background-color:#008080;
+  font-size:20px;
+  margin:10px;
+}

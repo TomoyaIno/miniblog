@@ -1,0 +1,19 @@
+.header {
+  height: 80px;
+  background-color: #008080;
+  letter-spacing:1px;
+}
+.user__info a{
+  text-decoration:none;
+  color: #f2f4f8;
+}
+.user__info li{
+  list-style:none;
+  line-height:70px;
+  font-size:18px;
+  margin:0px 20px;
+}
+.user__info .logo{
+  font-size:25px;
+  font-weight: 600;
+}

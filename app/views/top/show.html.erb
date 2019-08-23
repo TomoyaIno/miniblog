@@ -1,0 +1,17 @@
+<div class="contents row">
+  <div class="content_post">
+    <% if user_signed_in? && current_user.id == @tweet.user_id %>
+    
+    <div class="article">
+      <div class="article-text">
+        <p><%= @tweet.title %></p>
+        <p><%= @tweet.review %></p> 
+        <ul>
+               <li> <%= link_to 'EDIT', "/top/#{@tweet.id}/edit", method: :get %></li>
+               <li> <%= link_to 'DESTROY', "/top/#{@tweet.id}/", method: :delete %></li>
+        </ul>
+      </div>
+  </div>
+    <% end %>
+  </div>
+</div>

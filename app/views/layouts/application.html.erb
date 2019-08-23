@@ -12,13 +12,30 @@
   <body>
     <div class="header">
     <ul class="user__info">
-              <li class="logo" style="float :left"><a href="#">Blog</a></li>
-              <li class="entry-bottom" style="float :right"><a href="#">New</a></li>
-              <li class="logout" style="float :right"><a href="#">Signout</a></li>
-              <li class="sign-in" style="float :right"><a href="#">Signin</a></li>
-              
-          </ul>
-          </div>
+      <% if user_signed_in? %>
+      <li class="logo" style="float :left">
+       <%= link_to "Blog", root_path, class:'post'%></li>
+       
+        <li class="logout" style="float :right">
+          <%= link_to "Signout", destroy_user_session_path, method: :delete%>
+        </li> 
+        <li class="entry-bottom" style="float :right">
+          <%= link_to "New", new_top_path, class: 'post'%>
+        </li>
+      <% else %>
+       <li class="logo" style="float :left">
+       <%= link_to "Blog", root_path, class:'post'%></li>
+       
+        <li class="entry-bottom" style="float :right">
+          <%= link_to "New", new_top_path, class: 'post'%>
+        </li>
+        
+        <li class="sign-in" style="float :right">
+         <%= link_to "Signin", new_user_session_path, class: 'post'%>
+       </li>
+     <% end %>
+    </ul>
+    </div>
 
     <%= yield %>
   </body>

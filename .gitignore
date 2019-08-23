@@ -25,3 +25,12 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/config/locales/devise.en.yml
+        db/migrate/
+/test/fixtures/tweets.yml
+/test/fixtures/users.yml
+/config/initializers/devise.rb
+/test/models/tweet_test.rb
+/test/models/user_test.rb
+/db/schema.rb

@@ -3,13 +3,17 @@
     <div class="main-contents">
      <div class="article">
          <div class="article-text">
-             <p><%= tweet.nickname %></p>
+             <p><%= tweet.title %></p>
              <p><%= tweet.review %></p>
              <ul>
-               <li><a href="#">SHOW</a></li>
-               <li><a href="#">EDIT</a></li>
-               <li><a href="#">DESTROY</a></li>
-             </ul>
+            <li>
+              <%= link_to 'SHOW', top_path(tweet), method: :get %>
+            </li>
+            <% if user_signed_in? && current_user.id == tweet.user_id %>
+               <li> <%= link_to 'EDIT', "/top/#{tweet.id}/edit", method: :get %></li>
+               <li> <%= link_to 'DESTROY', "/top/#{tweet.id}/", method: :delete %></li>
+              <% end %>
+             </ul> 
          </div>
      </div>
     </div>
